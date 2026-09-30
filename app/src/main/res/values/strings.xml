@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Board To Contact</string>
+    <string name="tile_label">Board Reader</string>
+    <string name="headline">Board To Contact</string>
+    <string name="subtitle">Snap a shop board, save it as a contact.</string>
+    <string name="capture">Capture</string>
+    <string name="gallery">Gallery</string>
+    <string name="name_label">Name</string>
+    <string name="name_hint">Shop name</string>
+    <string name="phone_label">Phone</string>
+    <string name="no_phone">No number found</string>
+    <string name="address_label">Address</string>
+    <string name="address_hint">Road, area, PIN</string>
+    <string name="save">Save to Contacts</string>
+    <string name="hide_icon">Hide icon from launcher (tile keeps working)</string>
+    <string name="safety_note">Reading happens fully on your phone. Save opens the system contacts screen — nothing is stored without your confirm.</string>
+    <string name="read_failed">Could not read this photo. Try a clearer, straight shot.</string>
+    <string name="nothing_found">No name or number found. You can still type and save.</string>
+    <string name="nothing_to_save">Nothing to save yet — capture a board first.</string>
+    <string name="no_contacts_app">No contacts app found to save into.</string>
+    <string name="icon_hidden">Icon hidden. Open from Quick Settings tile or Settings → Apps.</string>
+    <string name="icon_shown">Icon back in the launcher.</string>
+    <string name="update_title">New version %1$s is out</string>
+    <string name="update_message">Update for the latest reading and fixes. Takes less than a minute.</string>
+    <string name="update_now">Update</string>
+    <string name="update_skip">Skip this version</string>
+    <string name="update_later">Later</string>
+    <string name="update_open_failed">Could not open the download page.</string>
+</resources>
