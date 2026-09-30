@@ -15,10 +15,11 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import com.google.mlkit.vision.text.latin.LatinTextRecognizerOptions
 import com.pranvir.boardtocontact.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 import java.io.File
+import kotlin.coroutines.resumeWithException
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val bitmap = loadDownscaled(uri) ?: throw IllegalStateException("photo")
                 val image = InputImage.fromBitmap(bitmap, 0)
-                val text = TextRecognition.getClient(TextRecognizerOptions.DEFAULT)
+                val text = TextRecognition.getClient(LatinTextRecognizerOptions.DEFAULT)
                     .process(image)
                     .await()
                 onText(text.text, text.textBlocks.flatMap { it.lines }.map { it.text })
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadDownscaled(uri: Uri): Bitmap? {
-        val bounds = BitmapFactory.Options().apply { inJustSampleSize = 1 }
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         contentResolver.openInputStream(uri)?.use { BitmapFactory.decodeStream(it, null, bounds) }
         var sample = 1
         val maxSide = maxOf(bounds.outWidth, bounds.outHeight)
